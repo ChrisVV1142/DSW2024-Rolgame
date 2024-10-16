@@ -36,9 +36,11 @@ public function obtenerPersonajesPorClase($class) : array
 
 
 
-public function eliminarMuertos()
+public function eliminarMuertos() : void
 {
-  
+  $this->personajes = array_filter(this->personaje, function($p) {
+    return $p->puntosDeVida > 0;
+  })
 }
 
 }
